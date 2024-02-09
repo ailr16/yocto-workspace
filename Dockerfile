@@ -1,17 +1,12 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 WORKDIR /yocto
 
 RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONTAINER_TIMEZONE > /etc/timezone && \
     apt-get update && \
-    apt-get install -y tzdata && \
     apt update && \
     apt install -y software-properties-common && \
     add-apt-repository ppa:deadsnakes/ppa --yes && \
-    apt install -y python3.8 && \
-    rm /usr/bin/python3 && \
-    ln -s /usr/bin/python3.8 /usr/bin/python3 && \
-    alias python3='/usr/bin/python3.8' && \
     apt install -y gawk && \
     apt install -y wget  && \
     apt install -y git  && \
@@ -23,6 +18,7 @@ RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONT
     apt install -y chrpath && \
     apt install -y socat && \
     apt install -y cpio && \
+    apt install -y python3 && \
     apt install -y python3-pip && \
     apt install -y python3-pexpect && \
     apt install -y xz-utils && \
