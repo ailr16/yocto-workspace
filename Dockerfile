@@ -1,6 +1,9 @@
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 
-RUN apt-get update && \
+WORKDIR /yocto
+
+RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONTAINER_TIMEZONE > /etc/timezone && \
+    apt-get update && \
     apt-get install -y tzdata && \
     apt update && \
     apt install -y software-properties-common && \
@@ -39,4 +42,5 @@ RUN apt-get update && \
     apt install -y nano && \
     git clone git://git.yoctoproject.org/poky
 
-CMD /bin/bash
+CMD locale-gen en_US.UTF-8; \
+    /bin/bash
