@@ -1,7 +1,5 @@
 FROM ubuntu:22.04
 
-WORKDIR /yocto
-
 RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONTAINER_TIMEZONE > /etc/timezone && \
     apt-get update && \
     apt update && \
@@ -36,7 +34,15 @@ RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONT
     apt install -y locales && \
     apt install -y libacl1 && \
     apt install -y nano && \
+    locale-gen en_US.UTF-8 && \
+    adduser --system --group yocto-user && \
+    usermod -aG sudo yocto-user
+
+USER yocto-user
+
+RUN cd /home/yocto-user/ && \
+    mkdir yocto && \
+    cd yocto && \
     git clone git://git.yoctoproject.org/poky
 
-CMD locale-gen en_US.UTF-8; \
-    /bin/bash
+CMD /bin/bash
