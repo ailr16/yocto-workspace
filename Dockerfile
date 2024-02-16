@@ -45,4 +45,5 @@ RUN cd /home/yocto-user/ && \
     cd yocto && \
     git clone git://git.yoctoproject.org/poky
 
-CMD /bin/bash
+CMD cd /home/yocto-user/yocto; \
+    /bin/bash
