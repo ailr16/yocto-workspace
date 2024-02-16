@@ -1,4 +1,4 @@
-# Ubuntu for buildroot (Docker image)
+# Ubuntu for Yocto/Poky (Docker image)
 Here are files related to building a Yocto image.
 
 I've tested on Windows 11 Pro
