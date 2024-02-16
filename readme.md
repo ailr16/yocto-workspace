@@ -1,6 +1,9 @@
 # Ubuntu for Yocto/Poky (Docker image)
 Here are files related to building a Yocto image.
 
+View on Docker Hub:  
+https://hub.docker.com/repository/docker/ailr16/ubuntu-for-yocto/general
+
 I've tested on Windows 11 Pro
 
 <mark>The container provides the environment to build the image using:
@@ -18,7 +21,12 @@ For any customization here is the Dockerfile.
 ## Run the container
 - Run my latest version in interactive mode:
     ```
-    docker run -it ailr16/ubuntu-for-yocto
+    docker run -it ailr16/ubuntu-for-yocto:latest
+    ```
+
+- Or run the image with the nanbield branch (just for avoid errors due to no switching to this branch):
+    ```
+    docker run -it ailr16/ubuntu-for-yocto:nanbield
     ```
 
 ## Get the output files
