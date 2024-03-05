@@ -42,8 +42,7 @@ USER yocto-user
 
 RUN cd /home/yocto-user/ && \
     mkdir yocto && \
-    cd yocto && \
-    git clone git://git.yoctoproject.org/poky
+    cd yocto
 
 CMD cd /home/yocto-user/yocto; \
     /bin/bash
