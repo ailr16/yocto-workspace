@@ -28,6 +28,12 @@ For any customization here is the Dockerfile.
     ```
     docker run -it ailr16/ubuntu-for-yocto:nanbield
     ```
+- Run an existing container with:
+    ```
+    docker start CONTAINER_ID
+    docker exec -it CONTAINER_ID /bin/bash
+    ```
+  
 
 ## Get the output files
 The working directory is:
