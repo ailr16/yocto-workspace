@@ -1,6 +1,14 @@
 {
-	"container-id": "3e74b357fae9",
-	"container-name": "yocto-container",
-	"output-dir": "/home/yocto-user/yocto/build/tmp/deploy/images/raspberrypi4-64/",
-	"host-output-dir": "/home/ailr16/yocto"
+	"container-settings":
+	{
+		"container-id": "3e74b357fae9",
+		"container-name": "yocto-container",
+		"output-dir": "/home/yocto-user/yocto/build/tmp/deploy/images/raspberrypi4-64/",
+		"host-output-dir": "/home/ailr16/yocto"
+	},
+	"serial-settings":
+	{
+		"serial-port": "/dev/ttyUSB0",
+		"baudrate": "115200"
+	}
 }
