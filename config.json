@@ -1,0 +1,6 @@
+{
+	"container-id": "3e74b357fae9",
+	"output-dir": "/home/yocto-user/yocto/build/tmp/deploy/images/raspberrypi4-64/",
+	"output-img": "core-image-minimal-raspberrypi4-64.rootfs-20240507010739.wic.bz2",
+	"host-output-dir": "/home/ailr16/yocto"
+}
