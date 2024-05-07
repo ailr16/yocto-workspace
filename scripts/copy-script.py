@@ -2,7 +2,7 @@ import json
 import subprocess
 
 class colors:
-    ERROR = "\033[31m",
+    ERROR = "\033[31m"
     OK = "\033[32m"
 
 json_file = open("config.json")
@@ -14,10 +14,10 @@ print("""Verify the data:
       Container name: {1}
       Output dir in container: {2}
       Output dir in host: {3}
-      """.format(configuration["container-name"],
-                 configuration["container-id"],
-                 configuration["output-dir"],
-                 configuration["host-output-dir"]
+      """.format(configuration["container-settings"]["container-name"],
+                 configuration["container-settings"]["container-id"],
+                 configuration["container-settings"]["output-dir"],
+                 configuration["container-settings"]["host-output-dir"]
                  )
 )
 
@@ -25,17 +25,17 @@ print("Enter the file name: ")
 img_file_name = str(input())
 
 
-print("Start copying the file:\n {0}{1}\ninto:\n {2}? (y/n)".format(configuration["output-dir"],
+print("Start copying the file:\n {0}{1}\ninto:\n {2}? (y/n)".format(configuration["container-settings"]["output-dir"],
                                                            img_file_name,
-                                                           configuration["host-output-dir"]))
+                                                           configuration["container-settings"]["host-output-dir"]))
 
 selection = str(input())
 
 if selection in ['Y', 'y']:
-    command = "docker cp {0}:{1}{2} {3}".format(configuration["container-id"],
-                                            configuration["output-dir"],
+    command = "docker cp {0}:{1}{2} {3}".format(configuration["container-settings"]["container-id"],
+                                            configuration["container-settings"]["output-dir"],
                                             img_file_name,
-                                            configuration["host-output-dir"])
+                                            configuration["container-settings"]["host-output-dir"])
 
     print("Running: " + command)
 
