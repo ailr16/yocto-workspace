@@ -32,7 +32,7 @@ print("Start copying the file:\n {0}{1}\ninto:\n {2}? (y/n)".format(configuratio
 selection = str(input())
 
 if selection in ['Y', 'y']:
-    command = "docker cp {0}:{1}{2} {3}".format(configuration["container-settings"]["container-id"],
+    command = 'docker cp {0}:{1}{2} "{3}"'.format(configuration["container-settings"]["container-id"],
                                             configuration["container-settings"]["output-dir"],
                                             img_file_name,
                                             configuration["container-settings"]["host-output-dir"])
