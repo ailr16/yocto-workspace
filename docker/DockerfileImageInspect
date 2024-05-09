@@ -1,0 +1,16 @@
+# Run with privileged flag and binded volume to host directory with image to inspect
+# docker run -it --privileged=true -v "C:\Users\Angel Lozano\Documents\yocto:/home/images" ailr16/yocto-image-inspect
+# run mount -o loop,offset=$((512 * 8192)) core-image-base-imx6sxsabresd.sdcard /mnt/mp1
+
+FROM ubuntu:22.04
+
+RUN apt-get update && \
+    apt update && \
+    apt install -y bzip2 && \
+    apt install -y fdisk && \
+    mkdir /home/images && \
+    mkdir /mnt/boot1
+
+CMD cd /home/images && \
+    mount -o loop,offset=$((512 * 8192)) *.wic /mnt/boot1 && \
+    /bin/bash
