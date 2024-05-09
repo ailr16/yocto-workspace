@@ -34,15 +34,22 @@ RUN ln -snf /usr/share/zoneinfo/$CONTAINER_TIMEZONE /etc/localtime && echo $CONT
     apt install -y locales && \
     apt install -y libacl1 && \
     apt install -y nano && \
+    apt install -y screen && \
+    apt install -y tree && \
     locale-gen en_US.UTF-8 && \
     adduser --system --group yocto-user && \
-    usermod -aG sudo yocto-user
+    usermod -aG sudo yocto-user && \
+    echo "set linenumbers" >> /etc/nanorc && \
+    echo "set autoindent" >> /etc/nanorc
 
 USER yocto-user
 
 RUN cd /home/yocto-user/ && \
     mkdir yocto && \
-    cd yocto
+    cd yocto && \
+    git clone git://git.yoctoproject.org/poky -b nanbield && \
+    git clone git://git.openembedded.org/meta-openembedded -b nanbield && \
+    git clone git://git.yoctoproject.org/meta-raspberrypi -b nanbield
 
 CMD cd /home/yocto-user/yocto; \
     /bin/bash
