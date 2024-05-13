@@ -1,7 +1,7 @@
 {
 	"container-settings":
 	{
-		"container-id": "2c4849195739",
+		"container-id": "a5458f96bbcd",
 		"container-name": "yocto-container",
 		"output-dir": "/home/yocto-user/yocto/build/tmp/deploy/images/raspberrypi4-64/",
 		"host-output-dir": "C:/Users/Angel Lozano/Documents/yocto/"
