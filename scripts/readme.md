@@ -1,0 +1,21 @@
+Create config.json in this directory with this structure:
+
+```json
+{
+	"container-settings":
+	{
+		"container-id": "db098dcb1b67",
+		"container-name": "yocto-container",
+		"output-dir": "/home/yocto-user/yocto/build/tmp/deploy/images/raspberrypi4-64/",
+		"host-output-dir": "C:/Users/Angel Lozano/Documents/yocto/"
+	},
+	"serial-settings":
+	{
+		"serial-port": "COM3",
+		"baudrate": "115200",
+		"teraterm-bin": "C:/Program Files (x86)/teraterm5/ttermpro.exe"
+	}
+}
+```
+
+Then just adjust it
