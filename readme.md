@@ -1,24 +1,36 @@
-# Ubuntu for Yocto/Poky (Docker image)
+# Linux
+
+## Install dependencies
+Run *install_dependencies.sh*  
+**NOTE1: This will prompt asking for the sudo password**  
+**NOTE2: This will crete the workspace directory in /home/$USER/yocto**
+```
+./Linux/install_dependencies.sh
+```
+
+# Windows
+
+## Ubuntu for Yocto/Poky (Docker image)
 Here are files related to building a Yocto image.
 
 View on Docker Hub:  
 https://hub.docker.com/repository/docker/ailr16/ubuntu-for-yocto/general
 
-I've tested on Windows 11 Pro
+Tested on Windows 11 Pro
 
 <mark>The container provides the environment to build the image using:
 - <mark>Ubuntu 22.04
 - <mark>Poky (tested with nanbield branches)
 
 
-## Building docker image
+### Building docker image
 For any customization here is the Dockerfile.
 - After making changes in Dockefile, inside the repo directory:
     ```
     docker build -t ubuntu-for-yocto . 
     ```
 
-## Run the container
+### Run the container
 - Run my latest version in interactive mode:
     ```
     docker run -it ailr16/ubuntu-for-yocto:latest
@@ -35,7 +47,7 @@ For any customization here is the Dockerfile.
     ```
   
 
-## Get the output files
+### Get the output files
 The working directory is:
     ```
     /home/yocto-user/yocto/
@@ -45,7 +57,7 @@ The working directory is:
     docker cp <containerId>:/home/yocto-user/yocto/... <path_in_host>
     ```
     
-## WIP. Emulating with QEMU
+### WIP. Emulating with QEMU
 	```
 	qemu-system-aarch64 -machine virt \
 	-cpu cortex-a72 \
