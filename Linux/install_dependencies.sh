@@ -9,8 +9,8 @@ apt install -y software-properties-common gawk wget  git diffstat unzip texinfo 
 
 locale-gen en_US.UTF-8
 
-mkdir ~/yocto
-cd ~/yocto
+mkdir /home/$USER/yocto
+cd /home/$USER/yocto
 git clone git://git.yoctoproject.org/poky -b nanbield
 git clone git://git.openembedded.org/meta-openembedded -b nanbield
 git clone git://git.yoctoproject.org/meta-raspberrypi -b nanbield
