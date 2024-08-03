@@ -3,10 +3,22 @@
 ## Install dependencies
 Run *install_dependencies.sh*  
 **NOTE1: This will prompt asking for the sudo password**  
-**NOTE2: This will crete the workspace directory in /home/$USER/yocto**
+**NOTE2: This will create the workspace directory in /home/$USER/yocto**
 ```
 ./Linux/install_dependencies.sh
 ```
+
+## For VMs: Create shared filesystem between Host-Guest
+Run *guestvm/mount_sharedfs.sh* in the guest
+```
+./Linux/guestvm/mount_sharedfs.sh
+```
+This will create a directory in */mnt/yocto_output* and mount the filesystem there.
+Copy the output files to that dir to share with the Host.
+
+NOTE: The next image show the configuration for filesystem in virt-manager:
+![fs example](/Linux/docs/img/fs_pass.png)
+
 
 # Windows
 
@@ -25,7 +37,7 @@ Tested on Windows 11 Pro
 
 ### Building docker image
 For any customization here is the Dockerfile.
-- After making changes in Dockefile, inside the repo directory:
+- After making changes in Dockerfile, inside the repo directory:
     ```
     docker build -t ubuntu-for-yocto . 
     ```
