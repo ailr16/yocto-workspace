@@ -1,11 +1,10 @@
 # Linux
 
 ## Install dependencies
-Run *install_dependencies.sh*
-**NOTE1: This will prompt asking for the sudo password**
-**NOTE2: This will prompt asking for the sudo password**
+Run *install_dependencies.sh*  
+**NOTE1: This will prompt asking for the sudo password**  
+**NOTE2: This will crete the workspace directory in /home/$USER/yocto**
 ```
-chmod a+x Linux/install_dependencies.sh
 ./Linux/install_dependencies.sh
 ```
 
