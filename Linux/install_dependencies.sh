@@ -14,3 +14,5 @@ cd /home/$USER/yocto
 git clone git://git.yoctoproject.org/poky -b nanbield
 git clone git://git.openembedded.org/meta-openembedded -b nanbield
 git clone git://git.yoctoproject.org/meta-raspberrypi -b nanbield
+
+cd /home/$USER/yocto
