@@ -2,7 +2,8 @@
 
 ## Install dependencies
 Run *install_dependencies.sh*
-**NOTE: This will prompt asking for the sudo password**
+**NOTE1: This will prompt asking for the sudo password**
+**NOTE2: This will prompt asking for the sudo password**
 ```
 chmod a+x Linux/install_dependencies.sh
 ./Linux/install_dependencies.sh
