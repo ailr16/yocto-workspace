@@ -48,7 +48,6 @@ RUN cd /home/yocto-user/ && \
     mkdir yocto && \
     cd yocto && \
     git clone git://git.yoctoproject.org/poky -b kirkstone && \
-    git clone git://git.openembedded.org/openembedded-core -b kirkstone && \
     git clone https://github.com/OE4T/meta-tegra.git -b kirkstone
 
 CMD cd /home/yocto-user/yocto; \
